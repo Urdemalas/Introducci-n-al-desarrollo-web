@@ -1,2 +1,2 @@
-# Introducci-n-al-desarrollo-web
+# Introduccion al desarrollo web
 Proyecto del curso Introducción al desarrollo web
