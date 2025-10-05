@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Francisco Javier - Desarrollador fullstack | React | Node.js | MongoDB. Desarrollo aplicaciones web completas desde el frontend hasta el backend. Portfolio con proyectos reales." content="width=device-width, initial-scale=1.0">
+    <title>Mi pagina web</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header role="banner">
+        <h1>Bienvenido a mi página web</h1>
+        <script src="script.js"></script>
+        <nav role="navigation">
+            <button class="nav-toggle" aria-label="Abrir menú de navegación" aria-controls="main-menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul id="main-menu" style="list-style: none; padding: 0; display: flex; gap: 20px; justify-content: center;">              
+                <li><a href="#about-me" style="text-decoration: none; color: #333;">Acerca de mí</a></li>
+                <li><a href="#projects" style="text-decoration: none; color: #333;">Proyectos</a></li>
+                <li><a href="#skills" style="text-decoration: none; color: #333;">Skills</a></li>
+                <li><a href="#contact" style="text-decoration: none; color: #333;">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="about-me" role="main">
+            <h2>Acerca de mí</h2>
+            <p>Hola, soy Francisco Javier. Me apasiona el desarrollo web y la tecnología</p>
+        </section>     
+        <section id="skills">
+            <h2>Skills</h2>
+            <ul>
+                <li>HTML5 &amp; CSS3</li>
+                <li>JavaScript (ES6+)</li>
+                <li>Responsive Web Design</li>
+                <li>Git &amp; Version Control</li>
+                <li>React.js</li>
+                <li>Node.js</li>
+                <li>APIs y AJAX</li>
+                <li>Testing básico</li>
+                <li>Trabajo en equipo</li>
+                <li>Resolución de problemas</li>
+            </ul>
+        </section>
+        <section id="projects">
+            <h2>Proyectos</h2>
+            <div style="text-align:center; margin-bottom:24px;">
+                <button onclick="filterProjects('all')">Todos</button>
+                <button onclick="filterProjects('web')">Web</button>
+                <button onclick="filterProjects('app')">App</button>
+            </div>
+            <div class="projects-list">
+                <article data-category="web">
+                    <figure>
+                        <img src="https://picsum.photos/400/400" alt="Proyecto 1" style="width:150px; border-radius:8px; cursor:pointer;" class="project-img">
+                        <figcaption>Proyecto 1: Sitio web de ejemplo</figcaption>
+                    </figure>
+                    <p>Este proyecto es una página web sencilla creada para practicar HTML, CSS y JavaScript.</p>
+                </article>
+                <article data-category="app">
+                    <figure>
+                        <img src="https://picsum.photos/200/200" alt="Proyecto 2" style="width:150px; border-radius:8px; cursor:pointer;" class="project-img">
+                        <figcaption>Proyecto 2: Aplicación de tareas</figcaption>
+                    </figure>
+                    <p>Una aplicación para gestionar tareas, desarrollada con JavaScript y almacenamiento local.</p>
+                </article>
+            </div>
+            <!-- Lightbox Modal -->
+            <div id="lightbox-modal" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.8); justify-content:center; align-items:center; z-index:9999;">
+                <span id="lightbox-close" style="position:absolute; top:32px; right:48px; font-size:2.5rem; color:#fff; cursor:pointer;">&times;</span>
+                <img id="lightbox-img" src="" alt="Imagen ampliada" style="max-width:90vw; max-height:80vh; border-radius:12px; box-shadow:0 8px 32px rgba(0,0,0,0.25);">
+            </div>
+        </section>
+        <section id="contact">
+            <h2>Contacto</h2>
+            <form role="form">
+                <div style="margin-bottom: 15px;">
+                    <label for="name">Nombre:</label>
+                    <input type="text" id="name" name="name" required style="width: 25%; padding: 8px;">
+                </div>
+                <div style="margin-bottom: 15px;">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required style="width: 25%; padding: 8px;">
+                </div>
+                <div style="margin-bottom: 15px;">
+                    <label for="message">Mensaje:</label>
+                    <textarea id="message" name="message" rows="5" required style="width: 50%; padding: 8px;"></textarea>
+                </div>
+                <button type="submit" style="padding: 10px 20px;">Enviar</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 Francisco Javier. Todos los derechos reservados.</p>
+        <script>
+        // Menú hamburguesa para navegación móvil
+        const navToggle = document.querySelector('.nav-toggle');
+        const navMenu = document.getElementById('main-menu');
+        navToggle.addEventListener('click', function() {
+            const expanded = navToggle.getAttribute('aria-expanded') === 'true';
+            navToggle.setAttribute('aria-expanded', !expanded);
+            navMenu.classList.toggle('open');
+        });
+        </script>
+    </footer>
+</body>
+</html>
